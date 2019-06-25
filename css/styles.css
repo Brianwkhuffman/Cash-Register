@@ -1,0 +1,47 @@
+#display{
+    border: 2px solid red;
+    width: 28%;
+    font-size: 35px;
+    text-align: right;
+}
+#register{
+    /* font-size: 55px; */
+    /* display: grid; */
+}
+.firstRow{
+    font-size: 35px;
+    width: 5%;
+    height: 100%;
+    white-space: normal;
+    margin: 3px;
+    /* word-wrap: break-word; */
+}
+.secRow{
+    font-size: 35px;
+    width: 5%;
+    height: 100%;
+    white-space: normal;
+    margin: 3px;
+}
+.thirdRow{
+    font-size: 35px;
+    width: 5%;
+    height: 100%;
+    white-space: normal;
+    margin: 3px;
+}
+.fourthRow{
+    font-size: 35px;
+    width: 5%;
+    height: 100%;
+    white-space: normal;
+    margin: 3px;
+}
+.lastRow{
+    font-size: 35px;
+    width: 5%;
+    height: 100%;
+    white-space: normal;
+    font-size: 35px;
+    margin: 3px;
+}
