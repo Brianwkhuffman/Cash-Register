@@ -5,6 +5,8 @@
     text-align: right;
 }
 #register{
+    padding: 30px;
+    border: 1px solid black;
     /* font-size: 55px; */
     /* display: grid; */
 }

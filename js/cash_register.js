@@ -4,7 +4,7 @@ const third = document.querySelectorAll('.thirdRow');
 const fourth = document.querySelectorAll('.fourthRow');
 const equalSign = document.querySelectorAll('.lastRow');
 const display = document.querySelector('#display');
-//console.log(equalSign);
+
 //numeric buttons--------------------------------------------
 first[0].addEventListener('click', seven);
 function seven(){
@@ -94,7 +94,7 @@ function zerozero(){
         display.innerHTML += 00;
     }
 }
-//display convert----------------------------------------
+//display convert number----------------------------------
 let displayConvert = parseInt(display.innerHTML);
 //clear-----------------------------------------------
 first[4].addEventListener('click', reset);
@@ -102,8 +102,6 @@ function reset(){
     display.innerHTML = 0;
 }
 //balance stuff------------------------------------------
-
-
 second[4].addEventListener('click', getBalance);
 function getBalance(){
     display.innerHTML = calculator.recallBalance();
@@ -115,28 +113,55 @@ function depositMonies(){
     display.innerHTML = 0;
 }
 
-
-//dot-------------------------------------------------
+fourth[4].addEventListener('click', withdrawMonies);
+function withdrawMonies(){
+    calculator.withdrawBalance(displayConvert);
+    display.innerHTML = 0;
+}
+//decimal---------------------------------------------
 fourth[2].addEventListener('click', dot);
 function dot(){
-    let dArr = display.innerHTML.split('');
-    let dLen = dArr.length - 1;
-        if (dArr[dLen] === '.'){
+        if (display.innerHTML.includes('.')){
         throw error;
     }else{
         display.innerHTML = display.innerHTML + '.';
     }
 }
-//equals
-equalSign[0].addEventListener('click', results);
-function results(){
-    display.innerHTML = calculator.getTotal();
-}
+
 //operators--------------------------------------------
+let operation;
 fourth[3].addEventListener('click', adding);
 function adding(displayNumber){
-    calculator.load(displayConvert);
+    let operation = '+';
     display.innerHTML = 0;
+}
+third[3].addEventListener('click', minus);
+function minus(){
+    let operation = '-'
+    display.innerHTML = 0;
+}
+second[3].addEventListener('click', times);
+function times(){
+    let operation = 'x';
+    display.innerHTML = 0;
+}
+first[3].addEventListener('click', divide);
+function divide(){
+    let operation = '÷'
+    display.innerHTML = 0;
+}
+//equals----------------------------------------------------
+equalSign[0].addEventListener('click', results);
+function results(){
+    if (operation === '+'){
+        //code
+    }else if (operation === '-'){
+        //code
+    }else if (operation === 'x'){
+        //code
+    }else if (operation === '÷'){
+        //code
+    }
 }
 //display.innerHTML = calculator.subtract(displayConvert);
 //display.innerHTML = displayConvert

@@ -1,6 +1,6 @@
 
 var calculator = (function(){
-    var balance = 0;
+    var balance = 100;
     var memory = 0;
     var total = 0;
     var calculatorModule = {
@@ -53,17 +53,15 @@ var calculator = (function(){
             memory = 0;
         },
         recallBalance: function(){
-            return this.balance;
+            return balance;
         },
         withdrawBalance: function(x){
-            return x -= balance;
+            balance = balance - x;
+            return balance;
         },
         depositBalance: function(x){
-            if (typeof x === 'number'){
-                return balance += x;
-            }else{
-                throw error;
-            }
+            balance = display.innerHTML;
+            return balance;
         }
     }
     return calculatorModule;
