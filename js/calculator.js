@@ -16,7 +16,7 @@ var calculator = (function(){
             //return console.log('this is a test')
         },
         add: function(x){
-            if (typeof x === 'number'){
+            if (typeof memory === 'number'){
                 return total += x;
             }else{
                 throw error;
@@ -43,15 +43,6 @@ var calculator = (function(){
                 throw error;
             }
         },
-        recallMemory: function(){
-            return memory;
-        },
-        saveMemory: function(){
-            memory = total;
-        },
-        clearMemory: function(){
-            memory = 0;
-        },
         recallBalance: function(){
             return balance;
         },
@@ -60,7 +51,7 @@ var calculator = (function(){
             return balance;
         },
         depositBalance: function(x){
-            balance = display.innerHTML;
+            balance += x;
             return balance;
         }
     }

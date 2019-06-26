@@ -1,167 +1,89 @@
-const first = document.querySelectorAll('.firstRow');
-const second = document.querySelectorAll('.secRow');
-const third = document.querySelectorAll('.thirdRow');
-const fourth = document.querySelectorAll('.fourthRow');
-const equalSign = document.querySelectorAll('.lastRow');
+const numbers = document.querySelectorAll('.number');
+const operation = document.querySelectorAll('.operator');
+const balanceStuff = document.querySelectorAll('.bank');
+const result = document.querySelector('.equals');
+const decimal = document.querySelector('.deci');
+const clear = document.querySelector('.reset');
 const display = document.querySelector('#display');
+// var displayNumber = parseInt(display.value);
 
-//numeric buttons--------------------------------------------
-first[0].addEventListener('click', seven);
-function seven(){
+//add event listener to all numbers-----------------
+for (let i=0;i<numbers.length;i++){
+    numbers[i].addEventListener('click', thisNum);
+}
+function thisNum(){
     if (display.innerHTML === '0'){
-        display.innerHTML = 7;
+        display.innerHTML = this.innerHTML;
+        // display.value = this.value;
     }else{
-        display.innerHTML += 7;
+        display.innerHTML += this.innerHTML;
+        // display.value+=this.value;
     }
 }
-first[1].addEventListener('click', eight);
-function eight(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 8;
-    }else{
-        display.innerHTML += 8;
-    }
-}
-first[2].addEventListener('click', nine);
-function nine(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 9;
-    }else{
-        display.innerHTML += 9;
-    }
-}
-second[0].addEventListener('click', four);
-function four(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 4;
-    }else{
-        display.innerHTML += 4;
-    }
-}
-second[1].addEventListener('click', five);
-function five(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 5;
-    }else{
-        display.innerHTML += 5;
-    }
-}
-second[2].addEventListener('click', six);
-function six(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 6;
-    }else{
-        display.innerHTML += 6;
-    }
-}
-third[0].addEventListener('click', one);
-function one(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 1;
-    }else{
-        display.innerHTML += 1;
-    }
-}
-third[1].addEventListener('click', two);
-function two(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 2;
-    }else{
-        display.innerHTML += 2;
-    }
-}
-third[2].addEventListener('click', three);
-function three(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 3;
-    }else{
-        display.innerHTML += 3;
-    }
-}
-fourth[0].addEventListener('click', zero);
-function zero(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 0;
-    }else{
-        display.innerHTML += 0;
-    }
-}
-fourth[1].addEventListener('click', zerozero);
-function zerozero(){
-    if (display.innerHTML === '0'){
-        display.innerHTML = 0;
-    }else{
-        display.innerHTML += 00;
-    }
-}
-//display convert number----------------------------------
-let displayConvert = parseInt(display.innerHTML);
-//clear-----------------------------------------------
-first[4].addEventListener('click', reset);
-function reset(){
-    display.innerHTML = 0;
-}
-//balance stuff------------------------------------------
-second[4].addEventListener('click', getBalance);
-function getBalance(){
-    display.innerHTML = calculator.recallBalance();
-}
-
-third[4].addEventListener('click', depositMonies);
-function depositMonies(){
-    calculator.depositBalance(displayConvert);
-    display.innerHTML = 0;
-}
-
-fourth[4].addEventListener('click', withdrawMonies);
-function withdrawMonies(){
-    calculator.withdrawBalance(displayConvert);
-    display.innerHTML = 0;
-}
-//decimal---------------------------------------------
-fourth[2].addEventListener('click', dot);
-function dot(){
-        if (display.innerHTML.includes('.')){
+//decimal-------------------------------------------------
+decimal.addEventListener('click', function(){
+    if (display.innerHTML.includes('.')){
         throw error;
     }else{
         display.innerHTML = display.innerHTML + '.';
     }
-}
+})
+//balance stuff----------------------------------------
+balanceStuff[0].addEventListener('click', function(){
+    display.innerHTML = calculator.recallBalance();
+})
 
-//operators--------------------------------------------
-let operation;
-fourth[3].addEventListener('click', adding);
-function adding(displayNumber){
-    let operation = '+';
+balanceStuff[1].addEventListener('click', function(){
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.depositBalance(displayNumber);
     display.innerHTML = 0;
-}
-third[3].addEventListener('click', minus);
-function minus(){
-    let operation = '-'
+})
+balanceStuff[2].addEventListener('click', function(){
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.withdrawBalance(displayNumber);
     display.innerHTML = 0;
-}
-second[3].addEventListener('click', times);
-function times(){
-    let operation = 'x';
+})
+//clear button--------------------------------------------
+clear.addEventListener('click', function(){
     display.innerHTML = 0;
-}
-first[3].addEventListener('click', divide);
-function divide(){
-    let operation = '÷'
+})
+//operators----------------------------------------------
+let mathoperator;
+operation[3].addEventListener('click', function(){
+    mathoperator = '+';
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.load(displayNumber);
     display.innerHTML = 0;
-}
-//equals----------------------------------------------------
-equalSign[0].addEventListener('click', results);
-function results(){
-    if (operation === '+'){
-        //code
-    }else if (operation === '-'){
-        //code
-    }else if (operation === 'x'){
-        //code
-    }else if (operation === '÷'){
-        //code
+});
+operation[2].addEventListener('click', function(){
+    mathoperator = '-'
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.load(displayNumber);
+    display.innerHTML = 0;
+});
+operation[1].addEventListener('click', function(){
+    mathoperator = 'x';
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.load(displayNumber);
+    display.innerHTML = 0;
+});
+operation[0].addEventListener('click', function(){
+    mathoperator = '÷';
+    let displayNumber = parseFloat(display.innerHTML);
+    calculator.load(displayNumber);
+    display.innerHTML = 0;
+});
+
+//result------------------------------
+result.addEventListener('click', function(){
+    let displayNumber = parseFloat(display.innerHTML);
+    if (mathoperator === '+'){
+        return display.innerHTML = calculator.add(displayNumber);
+    }else if (mathoperator === '-'){
+        return display.innerHTML = calculator.subtract(displayNumber);
+    }else if (mathoperator === 'x'){
+        return display.innerHTML = calculator.multiply(displayNumber);
+    }else if (mathoperator === '÷'){
+        return display.innerHTML = calculator.divide(displayNumber);
     }
-}
-//display.innerHTML = calculator.subtract(displayConvert);
-//display.innerHTML = displayConvert
+})
