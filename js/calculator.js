@@ -1,6 +1,7 @@
 
 var calculator = (function(){
     var balance = 100;
+    var noMoney = 'Not enough funds';
     var memory = 0;
     var total = 0;
     var calculatorModule = {
@@ -44,15 +45,15 @@ var calculator = (function(){
             }
         },
         recallBalance: function(){
-            return balance;
+                return balance;
         },
         withdrawBalance: function(x){
             balance = balance - x;
-            return balance;
+            return balance;          
         },
         depositBalance: function(x){
-            balance += x;
-            return balance;
+                balance = balance + x;
+                return balance;
         }
     }
     return calculatorModule;

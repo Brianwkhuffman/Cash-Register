@@ -1,6 +1,92 @@
-#display{
-    border: 1px solid black;
-    width: 200px;
-    margin-bottom: 4px;
-    text-align: right;
+/* font-family: 'Roboto Slab', serif; */
+body{
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5641576e-9536-4f75-8688-90cd5a1140f0/d1xej88-e73487f4-270a-4f28-8f3c-c74be0752554.png/v1/fill/w_1131,h_707,q_70,strp/gundam_wing_desktop_background_by_dradunov_d1xej88-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvNTY0MTU3NmUtOTUzNi00Zjc1LTg2ODgtOTBjZDVhMTE0MGYwXC9kMXhlajg4LWU3MzQ4N2Y0LTI3MGEtNGYyOC04ZjNjLWM3NGJlMDc1MjU1NC5wbmciLCJ3aWR0aCI6Ijw9MTQ0MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.MA134lyQgwIjl17cfRSGGfFnGMUYCtQkeuW_qjpwlZI');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
 }
+#header{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 75px;
+    position: absolute;
+}
+#display{
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 76%;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 30px;
+    color: white;
+}
+#cashreg{
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/6b5e7318064471.562c33b036d2f.jpg');
+    border-radius: 12px;
+    background-size: cover;
+}
+
+button{
+    padding: 10px;
+    margin: 4px 4px;
+    border-radius: 10px;
+    width: 60px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    transition-duration: 0.5s;
+}
+button:hover{
+    background-color: firebrick;
+}
+.bank:hover{
+    background-color: greenyellow;
+}
+.operator:hover{
+    background-color: grey;
+}
+
+#cashreg{
+    position: absolute;
+    top: 280px;
+}
+/* #boxx{
+    display: flex;
+    flex-direction: column;
+    background: pink;
+} */
+.models{
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    left: 650px;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    /* align-self: center; */
+}
+#rg{
+    top: 200px;
+}
+#mg{
+    top: 400px;
+}
+#pg{
+    top: 600px;
+}
+#tools{
+    left: 100px !important;
+    top: 650px;
+}
+/* resize */
+@media only screen and (max-width: 700px) {
+    #header{
+        font-size: 40px;
+    }
+    body{
+        background: black;
+    }
+    #boxx{
+        font-size: 30px;
+    }
+ }
