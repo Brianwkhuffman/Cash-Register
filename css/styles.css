@@ -51,42 +51,61 @@ button:hover{
     position: absolute;
     top: 280px;
 }
-/* #boxx{
-    display: flex;
-    flex-direction: column;
-    background: pink;
-} */
 .models{
     color: white;
     position: absolute;
     font-size: 30px;
-    left: 650px;
     font-family: 'Roboto Slab', serif;
-    display: flex;
+    /* display: flex; */
     /* align-self: center; */
 }
 #rg{
     top: 200px;
+    left: 650px;
 }
 #mg{
     top: 400px;
+    left: 650px;
 }
 #pg{
     top: 600px;
+    left: 650px;
 }
 #tools{
     left: 100px !important;
     top: 650px;
 }
 /* resize */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
     #header{
         font-size: 40px;
+    }
+    #cashreg{
+        top: 150px;
     }
     body{
         background: black;
     }
     #boxx{
         font-size: 30px;
+    }
+    #rg{
+        top: 500px;
+        left: 20px;
+    }
+    #mg{
+        top: 600px;
+        left: 20px;
+    }
+    #pg{
+        top: 700px;
+        left: 20px;
+    }
+    #tools{
+        top: 800px;
+        left: 20px !important;
+    }
+    #modelPic{
+        height: 70px !important;
     }
  }

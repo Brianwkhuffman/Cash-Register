@@ -175,16 +175,17 @@ tools.addEventListener('click', function(){
         misc.style.display = 'none';
     }
 })
-
+//function to make and append models to category
 function makeModels(modelUrl, appendTo){
     for (let i=0;i<modelUrl.length;i++){
         let models = document.createElement('img');
         models.id = 'modelPic';
         models.src = modelUrl[i];
-        models.style.height = '200px';
+        models.style.height = '170px';
         appendTo.appendChild(models);
     }
 }
+//-----------------------------------------------
 var rgArray = ['https://www.gundamplanet.com/pub/media/catalog/product/cache/aa72b28f82ebf2d897600ee194018ec6/r/g/rg-crossbone-gundam-x1-gp.jpg', 'https://www.gundamplanet.com/pub/media/catalog/product/cache/aa72b28f82ebf2d897600ee194018ec6/r/g/rg-rx-0-unicorn-gundam-bande-dessinee-ver-gp.jpg', 'https://www.gundamplanet.com/pub/media/catalog/product/cache/aa72b28f82ebf2d897600ee194018ec6/r/g/rg-oz-00ms-tallgeese-ew-ver-gp.jpg', 'https://www.gundamplanet.com/pub/media/catalog/product/cache/aa72b28f82ebf2d897600ee194018ec6/r/g/rg-msm-07s-z-gok-char-custom-00.jpg'];
 makeModels(rgArray, rgs);
 //--------------------------------------------------
